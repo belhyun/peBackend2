@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pe Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Product type</th>
+      <th>Cash price</th>
+      <th>Coin price</th>
+      <th>Image</th>
+      <th>Description</th>
+      <th>Reward type</th>
+      <th>Reward value</th>
+      <th>Alarm</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pe_products.each do |pe_product| %>
+      <tr>
+        <td><%= pe_product.name %></td>
+        <td><%= pe_product.product_type %></td>
+        <td><%= pe_product.cash_price %></td>
+        <td><%= pe_product.coin_price %></td>
+        <td><%= pe_product.image %></td>
+        <td><%= pe_product.description %></td>
+        <td><%= pe_product.reward_type %></td>
+        <td><%= pe_product.reward_value %></td>
+        <td><%= pe_product.alarm %></td>
+        <td><%= link_to 'Show', pe_product %></td>
+        <td><%= link_to 'Edit', edit_pe_product_path(pe_product) %></td>
+        <td><%= link_to 'Destroy', pe_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pe Product', new_pe_product_path %>

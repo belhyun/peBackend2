@@ -1,0 +1,32 @@
+<%= form_with(model: pe_exchange_common, local: true) do |form| %>
+  <% if pe_exchange_common.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pe_exchange_common.errors.count, "error") %> prohibited this pe_exchange_common from being saved:</h2>
+
+      <ul>
+        <% pe_exchange_common.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :banner %>
+    <%= form.text_field :banner %>
+  </div>
+
+  <div class="field">
+    <%= form.label :interval %>
+    <%= form.text_field :interval %>
+  </div>
+
+  <div class="field">
+    <%= form.label :maintenance %>
+    <%= form.check_box :maintenance %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

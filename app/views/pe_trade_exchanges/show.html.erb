@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @pe_trade_exchange.order %>
+</p>
+
+<p>
+  <strong>Target type:</strong>
+  <%= @pe_trade_exchange.target_type %>
+</p>
+
+<p>
+  <strong>Target value:</strong>
+  <%= @pe_trade_exchange.target_value %>
+</p>
+
+<p>
+  <strong>Need type:</strong>
+  <%= @pe_trade_exchange.need_type %>
+</p>
+
+<p>
+  <strong>Need value:</strong>
+  <%= @pe_trade_exchange.need_value %>
+</p>
+
+<%= link_to 'Edit', edit_pe_trade_exchange_path(@pe_trade_exchange) %> |
+<%= link_to 'Back', pe_trade_exchanges_path %>

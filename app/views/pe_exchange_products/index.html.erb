@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pe Exchange Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Order</th>
+      <th>Product</th>
+      <th>Price type</th>
+      <th>Price</th>
+      <th>Limit</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pe_exchange_products.each do |pe_exchange_product| %>
+      <tr>
+        <td><%= pe_exchange_product.group_id %></td>
+        <td><%= pe_exchange_product.order %></td>
+        <td><%= pe_exchange_product.product_id %></td>
+        <td><%= pe_exchange_product.price_type %></td>
+        <td><%= pe_exchange_product.price %></td>
+        <td><%= pe_exchange_product.limit %></td>
+        <td><%= pe_exchange_product.status %></td>
+        <td><%= link_to 'Show', pe_exchange_product %></td>
+        <td><%= link_to 'Edit', edit_pe_exchange_product_path(pe_exchange_product) %></td>
+        <td><%= link_to 'Destroy', pe_exchange_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pe Exchange Product', new_pe_exchange_product_path %>

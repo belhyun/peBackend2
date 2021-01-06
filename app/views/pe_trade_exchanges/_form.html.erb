@@ -1,0 +1,42 @@
+<%= form_with(model: pe_trade_exchange, local: true) do |form| %>
+  <% if pe_trade_exchange.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pe_trade_exchange.errors.count, "error") %> prohibited this pe_trade_exchange from being saved:</h2>
+
+      <ul>
+        <% pe_trade_exchange.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :order %>
+    <%= form.text_field :order %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target_type %>
+    <%= form.text_field :target_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target_value %>
+    <%= form.text_field :target_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :need_type %>
+    <%= form.text_field :need_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :need_value %>
+    <%= form.text_field :need_value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

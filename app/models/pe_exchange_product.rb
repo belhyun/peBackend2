@@ -1,0 +1,2 @@
+class PeExchangeProduct < ApplicationRecord
+end

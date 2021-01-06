@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pe_product.name %>
+</p>
+
+<p>
+  <strong>Product type:</strong>
+  <%= @pe_product.product_type %>
+</p>
+
+<p>
+  <strong>Cash price:</strong>
+  <%= @pe_product.cash_price %>
+</p>
+
+<p>
+  <strong>Coin price:</strong>
+  <%= @pe_product.coin_price %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @pe_product.image %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @pe_product.description %>
+</p>
+
+<p>
+  <strong>Reward type:</strong>
+  <%= @pe_product.reward_type %>
+</p>
+
+<p>
+  <strong>Reward value:</strong>
+  <%= @pe_product.reward_value %>
+</p>
+
+<p>
+  <strong>Alarm:</strong>
+  <%= @pe_product.alarm %>
+</p>
+
+<%= link_to 'Edit', edit_pe_product_path(@pe_product) %> |
+<%= link_to 'Back', pe_products_path %>

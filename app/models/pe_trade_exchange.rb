@@ -1,0 +1,2 @@
+class PeTradeExchange < ApplicationRecord
+end

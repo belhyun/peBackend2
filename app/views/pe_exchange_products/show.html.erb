@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @pe_exchange_product.group_id %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @pe_exchange_product.order %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @pe_exchange_product.product_id %>
+</p>
+
+<p>
+  <strong>Price type:</strong>
+  <%= @pe_exchange_product.price_type %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @pe_exchange_product.price %>
+</p>
+
+<p>
+  <strong>Limit:</strong>
+  <%= @pe_exchange_product.limit %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @pe_exchange_product.status %>
+</p>
+
+<%= link_to 'Edit', edit_pe_exchange_product_path(@pe_exchange_product) %> |
+<%= link_to 'Back', pe_exchange_products_path %>

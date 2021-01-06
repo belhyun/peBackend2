@@ -1,0 +1,2 @@
+class PeRecommend < ApplicationRecord
+end

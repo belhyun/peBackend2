@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pe Exchange Commons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Banner</th>
+      <th>Interval</th>
+      <th>Maintenance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pe_exchange_commons.each do |pe_exchange_common| %>
+      <tr>
+        <td><%= pe_exchange_common.banner %></td>
+        <td><%= pe_exchange_common.interval %></td>
+        <td><%= pe_exchange_common.maintenance %></td>
+        <td><%= link_to 'Show', pe_exchange_common %></td>
+        <td><%= link_to 'Edit', edit_pe_exchange_common_path(pe_exchange_common) %></td>
+        <td><%= link_to 'Destroy', pe_exchange_common, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pe Exchange Common', new_pe_exchange_common_path %>

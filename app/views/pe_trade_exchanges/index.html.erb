@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pe Trade Exchanges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Target type</th>
+      <th>Target value</th>
+      <th>Need type</th>
+      <th>Need value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pe_trade_exchanges.each do |pe_trade_exchange| %>
+      <tr>
+        <td><%= pe_trade_exchange.order %></td>
+        <td><%= pe_trade_exchange.target_type %></td>
+        <td><%= pe_trade_exchange.target_value %></td>
+        <td><%= pe_trade_exchange.need_type %></td>
+        <td><%= pe_trade_exchange.need_value %></td>
+        <td><%= link_to 'Show', pe_trade_exchange %></td>
+        <td><%= link_to 'Edit', edit_pe_trade_exchange_path(pe_trade_exchange) %></td>
+        <td><%= link_to 'Destroy', pe_trade_exchange, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pe Trade Exchange', new_pe_trade_exchange_path %>

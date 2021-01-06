@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @pe_recommend.order %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @pe_recommend.product_id %>
+</p>
+
+<%= link_to 'Edit', edit_pe_recommend_path(@pe_recommend) %> |
+<%= link_to 'Back', pe_recommends_path %>

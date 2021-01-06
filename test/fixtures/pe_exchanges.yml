@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  prize_date: 2021-01-06
+  product_d: 
+  name: MyString
+  phone: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  id_card: MyString
+  status: false
+
+two:
+  user_id: 
+  prize_date: 2021-01-06
+  product_d: 
+  name: MyString
+  phone: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  id_card: MyString
+  status: false

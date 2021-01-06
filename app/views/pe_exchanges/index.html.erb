@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pe Exchanges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Prize date</th>
+      <th>Product d</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Address1</th>
+      <th>Address2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Id card</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pe_exchanges.each do |pe_exchange| %>
+      <tr>
+        <td><%= pe_exchange.user_id %></td>
+        <td><%= pe_exchange.prize_date %></td>
+        <td><%= pe_exchange.product_d %></td>
+        <td><%= pe_exchange.name %></td>
+        <td><%= pe_exchange.phone %></td>
+        <td><%= pe_exchange.address1 %></td>
+        <td><%= pe_exchange.address2 %></td>
+        <td><%= pe_exchange.city %></td>
+        <td><%= pe_exchange.state %></td>
+        <td><%= pe_exchange.zip %></td>
+        <td><%= pe_exchange.id_card %></td>
+        <td><%= pe_exchange.status %></td>
+        <td><%= link_to 'Show', pe_exchange %></td>
+        <td><%= link_to 'Edit', edit_pe_exchange_path(pe_exchange) %></td>
+        <td><%= link_to 'Destroy', pe_exchange, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pe Exchange', new_pe_exchange_path %>

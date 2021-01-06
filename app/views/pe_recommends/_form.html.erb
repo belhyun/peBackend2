@@ -1,0 +1,27 @@
+<%= form_with(model: pe_recommend, local: true) do |form| %>
+  <% if pe_recommend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pe_recommend.errors.count, "error") %> prohibited this pe_recommend from being saved:</h2>
+
+      <ul>
+        <% pe_recommend.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :order %>
+    <%= form.text_field :order %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.text_field :product_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

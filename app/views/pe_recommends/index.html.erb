@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pe Recommends</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Product</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pe_recommends.each do |pe_recommend| %>
+      <tr>
+        <td><%= pe_recommend.order %></td>
+        <td><%= pe_recommend.product_id %></td>
+        <td><%= link_to 'Show', pe_recommend %></td>
+        <td><%= link_to 'Edit', edit_pe_recommend_path(pe_recommend) %></td>
+        <td><%= link_to 'Destroy', pe_recommend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pe Recommend', new_pe_recommend_path %>
