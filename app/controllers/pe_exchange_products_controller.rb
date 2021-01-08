@@ -4,7 +4,13 @@ class PeExchangeProductsController < ApplicationController
   # GET /pe_exchange_products
   # GET /pe_exchange_products.json
   def index
-    @pe_exchange_products = PeExchangeProduct.all
+    @pe_exchange_products = PeExchangeProduct.all.page(params[:page]).per(params[:per_page])
+    respond_to do |format|
+      format.html
+      format.json { render json:
+                               list_json(@pe_exchange_products, :include => [:pe_product])
+      }
+    end
   end
 
   # GET /pe_exchange_products/1
@@ -69,6 +75,6 @@ class PeExchangeProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pe_exchange_product_params
-      params.require(:pe_exchange_product).permit(:group_id, :order, :product_id, :price_type, :price, :limit, :status)
+      params.require(:pe_exchange_product).permit(:group_id, :order, :pe_product_id, :price_type, :price, :limit, :status)
     end
 end

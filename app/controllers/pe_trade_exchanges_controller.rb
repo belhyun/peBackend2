@@ -4,7 +4,13 @@ class PeTradeExchangesController < ApplicationController
   # GET /pe_trade_exchanges
   # GET /pe_trade_exchanges.json
   def index
-    @pe_trade_exchanges = PeTradeExchange.all
+    @pe_trade_exchange = PeTradeExchange.all.page(params[:page]).per(params[:per_page]).order("'order' asc")
+    respond_to do |format|
+      format.html
+      format.json { render json:
+                               list_json(@pe_trade_exchange)
+      }
+    end
   end
 
   # GET /pe_trade_exchanges/1

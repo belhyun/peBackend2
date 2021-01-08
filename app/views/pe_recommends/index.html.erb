@@ -15,7 +15,7 @@
     <% @pe_recommends.each do |pe_recommend| %>
       <tr>
         <td><%= pe_recommend.order %></td>
-        <td><%= pe_recommend.product_id %></td>
+        <td><%= pe_recommend.pe_product_id %></td>
         <td><%= link_to 'Show', pe_recommend %></td>
         <td><%= link_to 'Edit', edit_pe_recommend_path(pe_recommend) %></td>
         <td><%= link_to 'Destroy', pe_recommend, method: :delete, data: { confirm: 'Are you sure?' } %></td>

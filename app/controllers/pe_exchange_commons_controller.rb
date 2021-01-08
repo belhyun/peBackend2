@@ -10,20 +10,12 @@ class PeExchangeCommonsController < ApplicationController
   # GET /pe_exchange_commons
   # GET /pe_exchange_commons.json
   def index
-    @pe_exchange_commons = PeExchangeCommon.all
-
-    # render :json => {
-    #     exchangeCommon:
-    #         @pe_exchange_commons.map { |ex_change_common| {
-    #             banner: url_for(ex_change_common.banner),
-    #             interval: ex_change_common.interval,
-    #             maintenance: ex_change_common.maintenance
-    #         }}
-    # }
-    #
+    @pe_exchange_commons = PeExchangeCommon.all.page(params[:page]).per(params[:per_page])
     respond_to do |format|
       format.html
-      format.json { render json: list_json(@pe_exchange_commons) }
+      format.json { render json:
+                               list_json(@pe_exchange_commons)
+      }
     end
   end
 

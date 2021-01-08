@@ -17,7 +17,7 @@ ActiveAdmin.register PeExchangeCommon do
 
   permit_params do
     permitted = [:banner, :interval, :maintenance]
-    permitted << :other if params[:action] == 'create' && current_user.admin?
+    permitted << :other if params[:action] == 'create'
     permitted
   end
 

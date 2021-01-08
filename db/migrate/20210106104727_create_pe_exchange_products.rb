@@ -3,7 +3,7 @@ class CreatePeExchangeProducts < ActiveRecord::Migration[6.0]
     create_table :pe_exchange_products do |t|
       t.numeric :group_id
       t.numeric :order
-      t.numeric :product_id
+      t.numeric :pe_product_id
       t.numeric :price_type
       t.numeric :price
       t.numeric :limit

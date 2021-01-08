@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_06_114559) do
+ActiveRecord::Schema.define(version: 2021_01_07_131708) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "namespace"
@@ -61,28 +61,28 @@ ActiveRecord::Schema.define(version: 2021_01_06_114559) do
 
   create_table "pe_exchange_commons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "banner"
-    t.decimal "interval", precision: 10
+    t.integer "interval"
     t.boolean "maintenance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "pe_exchange_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.decimal "group_id", precision: 10
+    t.integer "group_id"
     t.decimal "order", precision: 10
-    t.decimal "product_id", precision: 10
-    t.decimal "price_type", precision: 10
-    t.decimal "price", precision: 10
-    t.decimal "limit", precision: 10
+    t.bigint "pe_product_id"
+    t.integer "price_type"
+    t.bigint "price"
+    t.integer "limit"
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "pe_exchanges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.decimal "user_id", precision: 10
+    t.bigint "user_id"
     t.date "prize_date"
-    t.decimal "product_d", precision: 10
+    t.bigint "pe_product_id"
     t.string "name"
     t.string "phone"
     t.string "address1"
@@ -98,31 +98,31 @@ ActiveRecord::Schema.define(version: 2021_01_06_114559) do
 
   create_table "pe_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
-    t.decimal "product_type", precision: 10
-    t.decimal "cash_price", precision: 10
-    t.decimal "coin_price", precision: 10
+    t.integer "product_type"
+    t.integer "cash_price"
+    t.integer "coin_price"
     t.string "image"
     t.string "description"
-    t.decimal "reward_type", precision: 10
-    t.decimal "reward_value", precision: 10
+    t.integer "reward_type"
+    t.integer "reward_value"
     t.boolean "alarm"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "pe_recommends", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.decimal "order", precision: 10
-    t.decimal "product_id", precision: 10
+    t.integer "order"
+    t.bigint "pe_product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "pe_trade_exchanges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.decimal "order", precision: 10
-    t.decimal "target_type", precision: 10
-    t.decimal "target_value", precision: 10
-    t.decimal "need_type", precision: 10
-    t.decimal "need_value", precision: 10
+    t.integer "target_type"
+    t.integer "target_value"
+    t.integer "need_type"
+    t.integer "need_value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

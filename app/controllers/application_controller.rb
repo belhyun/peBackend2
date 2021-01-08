@@ -8,13 +8,18 @@ class ApplicationController < ActionController::Base
     end
 
 
+    offset_value = 1, limit_value = 10
+    if list.respond_to?(:offset_value) && list.respond_to?(:limit_value)
+      offset_value = list.offset_value
+      limit_value = list.limit_value
+    end
     {
         :message     => "#{list.klass.name} list.",
-        :status_code => 'success',
-        # :page        => (list.offset_value/list.limit_value)+1,
-        # :per_page    => list.limit_value,
+        :result_code => 'success',
+        :page        => (offset_value/limit_value)+1,
+        :per_page    => limit_value,
         :total_count => total_count,
-        list.klass.name.pluralize.underscore =>
+        list.klass.name.pluralize =>
             list.map{|obj| obj.readable_object(hash) }
     }
   end

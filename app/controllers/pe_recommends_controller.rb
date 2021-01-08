@@ -4,7 +4,13 @@ class PeRecommendsController < ApplicationController
   # GET /pe_recommends
   # GET /pe_recommends.json
   def index
-    @pe_recommends = PeRecommend.all
+    @pe_recommends = PeRecommend.all.page(params[:page]).per(params[:per_page]).order("'order' asc")
+    respond_to do |format|
+      format.html
+      format.json { render json:
+                               list_json(@pe_recommends, :include => [:pe_product])
+      }
+    end
   end
 
   # GET /pe_recommends/1
@@ -62,13 +68,13 @@ class PeRecommendsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_pe_recommend
-      @pe_recommend = PeRecommend.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_pe_recommend
+    @pe_recommend = PeRecommend.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def pe_recommend_params
-      params.require(:pe_recommend).permit(:order, :product_id)
-    end
+  # Only allow a list of trusted parameters through.
+  def pe_recommend_params
+    params.require(:pe_recommend).permit(:order, :pe_product_id)
+  end
 end

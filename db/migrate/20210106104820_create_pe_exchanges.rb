@@ -3,7 +3,7 @@ class CreatePeExchanges < ActiveRecord::Migration[6.0]
     create_table :pe_exchanges do |t|
       t.numeric :user_id
       t.date :prize_date
-      t.numeric :product_d
+      t.numeric :pe_product_id
       t.string :name
       t.string :phone
       t.string :address1
@@ -16,5 +16,8 @@ class CreatePeExchanges < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+
+    # change_column :product_d, :product_id, :numeric
   end
 end
+

@@ -7,7 +7,7 @@ class PeExchangeCommon < ApplicationRecord
     # when 1
     # end
     ret = {
-        :banner => Rails.application.routes.url_helpers.url_for(self.banner),
+        :banner => self.banner.attached? ? Rails.application.routes.url_helpers.url_for(self.banner) : "",
         :interval => self.interval,
         :maintenance => self.maintenance
     }

@@ -15,7 +15,7 @@ class PeRecommendsTest < ApplicationSystemTestCase
     click_on "New Pe Recommend"
 
     fill_in "Order", with: @pe_recommend.order
-    fill_in "Product", with: @pe_recommend.product_id
+    fill_in "Product", with: @pe_recommend.pe_product_id
     click_on "Create Pe recommend"
 
     assert_text "Pe recommend was successfully created"
@@ -27,7 +27,7 @@ class PeRecommendsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Order", with: @pe_recommend.order
-    fill_in "Product", with: @pe_recommend.product_id
+    fill_in "Product", with: @pe_recommend.pe_product_id
     click_on "Update Pe recommend"
 
     assert_text "Pe recommend was successfully updated"

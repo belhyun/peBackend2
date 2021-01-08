@@ -14,5 +14,38 @@ ActiveAdmin.register PeProduct do
     permitted << :other if params[:action] == 'create' && current_user.admin?
     permitted
   end
-  
+
+
+  form do |f|
+    f.inputs do
+      f.input :name
+      f.input :product_type
+      f.input :cash_price
+      f.input :coin_price
+      f.input :image, as: :file
+      f.input :description
+      f.input :reward_type
+      f.input :reward_value
+      f.input :alarm
+    end
+    f.actions
+  end
+
+  show do
+    attributes_table do
+      row :name
+      row :product_type
+      row :cash_price
+      row :coin_price
+      row :image do |ad|
+        if ad.image.attached?
+          image_tag url_for(ad.image)
+        end
+      end
+      row :description
+      row :reward_type
+      row :reward_value
+      row :alarm
+    end
+  end
 end

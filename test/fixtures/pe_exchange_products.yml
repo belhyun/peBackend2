@@ -3,7 +3,7 @@
 one:
   group_id: 
   order: 
-  product_id: 
+  pe_product_id:
   price_type: 
   price: 
   limit: 
@@ -12,7 +12,7 @@ one:
 two:
   group_id: 
   order: 
-  product_id: 
+  pe_product_id:
   price_type: 
   price: 
   limit: 

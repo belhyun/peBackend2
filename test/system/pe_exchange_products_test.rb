@@ -19,7 +19,7 @@ class PeExchangeProductsTest < ApplicationSystemTestCase
     fill_in "Order", with: @pe_exchange_product.order
     fill_in "Price", with: @pe_exchange_product.price
     fill_in "Price type", with: @pe_exchange_product.price_type
-    fill_in "Product", with: @pe_exchange_product.product_id
+    fill_in "Product", with: @pe_exchange_product.pe_product_id
     fill_in "Status", with: @pe_exchange_product.status
     click_on "Create Pe exchange product"
 
@@ -36,7 +36,7 @@ class PeExchangeProductsTest < ApplicationSystemTestCase
     fill_in "Order", with: @pe_exchange_product.order
     fill_in "Price", with: @pe_exchange_product.price
     fill_in "Price type", with: @pe_exchange_product.price_type
-    fill_in "Product", with: @pe_exchange_product.product_id
+    fill_in "Product", with: @pe_exchange_product.pe_product_id
     fill_in "Status", with: @pe_exchange_product.status
     click_on "Update Pe exchange product"
 
